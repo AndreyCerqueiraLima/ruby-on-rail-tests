@@ -1,0 +1,22 @@
+
+%table.table
+  %thead
+    %tr
+      %th{:scope => "col"} #
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Document
+      %th{:scope => "col"} Birthdate
+  %tbody
+    - users.each do |user|
+      %tr
+        %td
+          =user.id
+
+        %td
+          =user.email
+
+        %td
+          =user.document_number
+
+        %td
+          = l user.birthdate, default: 'not mentioned'

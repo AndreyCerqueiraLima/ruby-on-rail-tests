@@ -1,0 +1,9 @@
+= page_title "Empresas"
+
+= @company.name
+
+= @company.cnpj
+
+= link_to "Criar Usuario", new_company_user_path(@company)
+
+= render partial: 'companies/users/table', locals:{users: @company.users}
