@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nota-fiscal-service
+    ports:
+      - 3001:3001
+    networks:
+      - sovos
+
+networks:
+  sovos:
+    name: "sovos"

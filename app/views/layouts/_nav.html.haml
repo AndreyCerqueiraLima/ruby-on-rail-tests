@@ -19,6 +19,9 @@
             = link_to "Empresa", companies_path, class:"nav-link"
 
           %li.nav-item
+            = link_to "Api Empresa", api_v1_companies_path, class:"nav-link"
+
+          %li.nav-item
             = link_to "Logout", destroy_user_session_path, class:"nav-link"
         -else
           %li.nav-item

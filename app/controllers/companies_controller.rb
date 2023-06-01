@@ -1,9 +1,14 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /companies or /companies.json
   def index
     @companies = Company.all
+    respond_to do |format|
+      format.json { render json: @companies}
+      format.html
+    end
   end
 
   # GET /companies/1 or /companies/1.json
