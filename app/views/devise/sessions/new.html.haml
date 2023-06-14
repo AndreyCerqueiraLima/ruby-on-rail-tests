@@ -1,0 +1,21 @@
+= page_title "Login"
+
+%main.mb-5{style:"margin-top:-30px"}
+  .container.px-4
+    .row.d-flex.justify-content-center
+      .col-xl-5.col-md-8
+        .card.shadow-4
+          .card-body.p-4
+            / Pills navs
+            %ul#ex1.nav.nav-pills.nav-justified.mb-3{role: "tablist"}
+              %li.nav-item{role: "presentation"}
+                %a#tab-login.nav-link.active{"aria-controls" => "pills-login", "aria-selected" => "true", "data-mdb-toggle" => "pill", href: "#pills-login", role: "tab"} Login
+              %li.nav-item{role: "presentation"}
+                %a#tab-register.nav-link{"aria-controls" => "pills-register", "aria-selected" => "false", "data-mdb-toggle" => "pill", href: "#pills-register", role: "tab"} Register
+            / Pills navs
+            / Pills content
+            .tab-content
+              #pills-login.tab-pane.fade.show.active{"aria-labelledby" => "tab-login", role: "tabpanel"}
+                = render 'form'
+              #pills-register.tab-pane.fade{"aria-labelledby" => "tab-register", role: "tabpanel"}
+                = render 'devise/registrations/form'

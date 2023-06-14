@@ -1,16 +1,37 @@
-<h2>Forgot your password?</h2>
+<% page_title "Forgot your password? " %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<main class="mb-5" style="margin-top: -20px;">
+  <!-- Container for demo purpose -->
+  <div class="container px-4">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-5 col-md-8">
+        <div class="card shadow-4">
+          <div class="card-header py-4">
+            <h5 class="mb-0">Forgot Password</h4>
+          </div>
+          <div class="card-body p-4">
+            <p class="mb-4">Enter your email address and we’ll send a link to reset your password</p>
+
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <div class="form-outline mb-4">
+
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+                <label class="form-label" for="emailInput">Your e-mail address</label>
+              </div>
+
+              <%= f.submit "Send me reset password instructions", class:"btn btn-primary" %>
+            <%end %>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <u><%= link_to "Back to Log In", new_user_session_path %></u>
+
+              <u><%= link_to "Register", new_user_registration_path %></u>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <!-- Container for demo purpose -->
+</main>

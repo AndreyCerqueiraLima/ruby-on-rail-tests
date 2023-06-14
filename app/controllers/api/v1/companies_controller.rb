@@ -3,7 +3,7 @@ class Api::V1::CompaniesController < ApiController
 
   # GET /companies or /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.all.page(params[:page])
     respond_to do |format|
       format.json { render json: @companies}
       format.any { redirect_to root_url }

@@ -1,0 +1,22 @@
+= page_title "Admin Dashboard"
+
+.container
+  .row.mt-4
+
+    .col-md-6
+      .card.card-body
+        = turbo_frame_tag :company_dashboard, loading: :lazy,src: admin_company_dashboard_path do
+          .spinner-border.text-primary{role: "status"}
+            %span.visually-hidden Loading...
+        .row.mt-4.justify-content-end
+          .col-md-3
+            = link_to "Empresas", companies_path, class: "btn btn-danger"
+
+    .col-md-6
+      .card.card-body
+        = turbo_frame_tag :user_dashboard, loading: :lazy,src: admin_user_dashboard_path do
+          .spinner-border.text-primary{role: "status"}
+            %span.visually-hidden Loading...
+        .row.mt-4.justify-content-end
+          .col-md-3
+            = link_to "Usuários", companies_path, class: "btn btn-primary"

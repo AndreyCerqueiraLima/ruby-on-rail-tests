@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# ruby "3.0.0"
 ruby "3.1.0"
-
 gem 'devise'
 gem 'simple_form'
 gem 'haml'
-
+gem "kaminari", "~> 1.2"
 gem 'simple-navigation','~> 3.11'
 gem 'simple_navigation_renderers'
 
