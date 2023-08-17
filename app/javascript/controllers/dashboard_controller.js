@@ -5,7 +5,6 @@ export default class extends Controller {
     static values = { title: String ,x: Array, y: Array }
     static targets = ["canvas"]
     connect() {
-        debugger
         var ctx = this.canvasTarget.getContext("2d");
         new Chart(ctx, {
             type: "bar",

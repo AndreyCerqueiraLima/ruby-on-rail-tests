@@ -1,0 +1,4 @@
+= simple_form_for :q, src: location, method: :get do |f|
+  .d-flex.align-items-baseline
+    = f.input :search, input_html:{name: :search, value: params[:search] || "" }
+    = f.submit "Pesquisar", class:"btn btn-secondary"

@@ -9,6 +9,8 @@ gem 'haml'
 gem "kaminari", "~> 1.2"
 gem 'simple-navigation','~> 3.11'
 gem 'simple_navigation_renderers'
+gem 'sunspot_rails'
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
@@ -63,6 +65,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'sunspot_solr', '~> 2.6' # optional pre-packaged Solr distribution for use in development. Not for use in production.
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

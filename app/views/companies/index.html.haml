@@ -1,25 +1,29 @@
-= page_title "Empresas"
+= page_title "Empresdas"
+.container
+  .card.card-body
+    %table.table
+      %thead
+        %tr
+          %th{:scope => "col"} #
+          %th{:scope => "col"} Name
+          %th{:scope => "col"} Cnpj
+          %th{:scope => "col"} Quantidade Produtos
+          %th{:scope => "col"} Actions
+      %tbody
+        - @companies.each do |company|
+          %tr
+            %th
+              = company.id
+            %td
+              = company.name
+            %td
+              = company.cnpj
+            %td
+              = company.products.size
+            %td
+              = link_to "Mostrar", company_path(company), class: "btn btn-link btn-rounded btn-sm fw-bold"
+              = link_to "Editar", edit_company_path(company), class: "btn btn-link btn-rounded btn-sm fw-bold"
 
-%table.table
-  %thead
-    %tr
-      %th{:scope => "col"} #
-      %th{:scope => "col"} Name
-      %th{:scope => "col"} Cnpj
-      %th{:scope => "col"} Actions
-  %tbody
-    - @companies.each do |company|
-      %tr
-        %th
-          = company.id
-        %td
-          = company.name
-        %td
-          = company.cnpj
+    = paginate @companies
 
-        %td
-          = link_to "Mostrar", company_path(company), class: "btn btn-link btn-rounded btn-sm fw-bold"
-          = link_to "Editar", edit_company_path(company), class: "btn btn-link btn-rounded btn-sm fw-bold"
-
-
-= link_to "New company", new_company_path, class:"btn btn-primary"
+    = link_to "Nova Empresa", new_company_path, class:"btn btn-primary"

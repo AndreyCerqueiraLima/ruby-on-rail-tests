@@ -5,11 +5,31 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: nota-fiscal-service
+    volumes:
+      - .:/app:delegated
     ports:
       - 3001:3001
+    depends_on:
+      - solr
     networks:
-      - sovos
+      - nota-fiscal-network
+  solr:
+    networks:
+      - nota-fiscal-network
+    container_name: nota-fiscal-solr
+    image: solr:8-slim
+    ports:
+      - 8981:8983
+    volumes:
+      - ./solr:/var/solr
+    command:
+      - solr-precreate
+      - web
+
+volumes:
+  solr:
+    name: nota-fiscal-solr
 
 networks:
-  sovos:
-    name: "sovos"
+  nota-fiscal-network:
+    name: "nota-fiscal-network"

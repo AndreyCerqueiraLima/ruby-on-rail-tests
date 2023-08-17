@@ -1,5 +1,4 @@
-.alert.fade.alert-success.alert-fixed{:role => "alert"}
-  %i.fas.fa-exclamation-triangle.me-3
-  = notice
-  %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-    %span{"aria-hidden" => "true"} ×
+#alert-primary.alert.fade{"data-mdb-append-to-body" => "true", "data-mdb-autohide" => "true", "data-mdb-color" => "primary", "data-mdb-delay" => "2000", "data-mdb-hidden" => "true", "data-mdb-position" => "top-right", "data-mdb-stacking" => "true", "data-mdb-width" => "900px", role: "alert"}
+  A simple primary alert with
+  = succeed "." do
+    %a.alert-link{href: "#"} an example link

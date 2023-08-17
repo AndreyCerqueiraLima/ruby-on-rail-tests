@@ -13,4 +13,30 @@
       Bem-vindo ao nosso Sistema de Gerenciamento de Notas Fiscais!
     %p{:style => "font-family: 'Roboto Black';width: 80%;font-size: 20px;margin-top: 30px;"}
       Estamos encantados em tê-lo aqui. Nossa plataforma de fácil utilização foi projetada para otimizar e simplificar o processo de gerenciamento de suas faturas do MEI. Com nossos recursos poderosos e interface intuitiva, você pode lidar eficientemente com toda a sua documentação financeira.
-    %button.btn.btn-danger{:style => "margin-top: 30px;height:70px;width: 200px; font-size: 22px"} Read More
+    %button.btn.btn-danger{:style => "margin-top: 30px;height:70px;width: 200px; font-size: 22px"} Leia Mais
+
+%div.text-center.justify-content-center.mt-4.mb-4{"data-aos" => "fade-right", "data-aos-duration" => "1000"}
+  .container
+    %h1
+      Participe da nossa evolução
+    %p
+      A nossa empresa está trilhando um caminho notável rumo à evolução e crescimento contínuo. Suas métricas refletem uma organização que está se fortalecendo, alcançando novos patamares e superando desafios com sucesso.
+  = turbo_frame_tag :admin_dashboard, loading: :lazy,src: admin_dashboard_path do
+    .spinner-border.text-primary{role: "status"}
+      %span.visually-hidden Loading...
+
+%div{:style => "background-image: url(#{asset_path 'welcomepage2.png'});
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-left: 43%;
+  padding-top: 10%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  height: 100vh;
+  background-size: cover;"}
+  %div{"data-aos" => "fade-left", "data-aos-duration" => "1000"}
+    %h1{:style => "font-family: 'Roboto Black';font-weight: bold;font-size: 72px;width: 80%;word-spacing: 1px"}
+      Trabalhe Conosco
+    %p{:style => "font-family: 'Roboto Black';width: 80%;font-size: 20px;margin-top: 30px;"}
+      A contabilidade e emissão de notas fiscais podem ser tarefas complexas e onerosas, especialmente em um cenário onde as leis e regulamentações fiscais estão em constante mudança. Reconhecendo essa dificuldade, criamos esta plataforma para ser a sua parceira confiável na organização, armazenamento e emissão de notas fiscais eletrônicas.
+    %button.btn.btn-danger{:style => "margin-top: 30px;height:70px;width: 200px; font-size: 22px"} Leia Mais

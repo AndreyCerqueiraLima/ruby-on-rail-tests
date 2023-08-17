@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :companies, path: 'admin/companies' do
       resources :users, module: :companies
+      resources :products, module: :companies
     end
 
     get 'users/sign_out' => 'devise/sessions#destroy'

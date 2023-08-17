@@ -1,0 +1,23 @@
+production:
+  solr:
+    hostname: nota-fiscal-solr
+    port: 8983
+    log_level: WARNING
+    path: /solr/web
+    # read_timeout: 2
+    # open_timeout: 0.5
+
+development:
+  solr:
+    hostname: nota-fiscal-solr
+    port: 8983
+    log_level: INFO
+    path: /solr/web
+
+test:
+  solr:
+    hostname: nota-fiscal-solr
+    port: 8983
+    log_level: WARNING
+    path: /solr/web
+    

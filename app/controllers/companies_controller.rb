@@ -4,11 +4,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies or /companies.json
   def index
-    @companies = Company.all
-    respond_to do |format|
-      format.json { render json: @companies}
-      format.html
-    end
+    @companies = Company.limit(10).page(params[:page])
   end
 
   # GET /companies/1 or /companies/1.json

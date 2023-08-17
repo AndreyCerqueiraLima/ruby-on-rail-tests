@@ -1,0 +1,3 @@
+= turbo_frame_tag :products do
+  = render 'common/search', location: company_products_path(@company)
+  = render 'table', products: @products

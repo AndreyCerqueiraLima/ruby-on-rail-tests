@@ -1,0 +1,21 @@
+= simple_form_for [@company,@product] do |f|
+  .container
+    .card{style:"padding:20px"}
+      .row
+
+        .col-12.mb-3
+          = f.input :name
+
+        .col-12.mb-3
+          = f.input :price
+
+
+        .col-12.mb-3
+          = f.input :quantity
+
+
+        .col-12.mb-3
+          = f.submit class: 'btn btn-primary'
+    
+    
+    
