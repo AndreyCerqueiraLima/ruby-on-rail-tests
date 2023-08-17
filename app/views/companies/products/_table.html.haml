@@ -6,7 +6,7 @@
       %th{:scope => "col"} Name
       %th{:scope => "col"} Price (R$)
       %th{:scope => "col"} Quantity
-      %th{:scope => "col"} Company
+
   %tbody
     - products.each do |product|
       %tr
@@ -23,8 +23,6 @@
         %td
           =product.quantity
 
-        %td
-          =product.company.name
 
 
 
